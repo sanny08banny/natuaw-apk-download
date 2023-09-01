@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naturaw</title>
+    <link rel="stylesheet" href="/styles/styles.css"> <!-- Link to the external CSS file -->
+</head>
+<body>
+    <header>
+        <h1>Naturaw</h1>
+        <img src="https://naturaw.s3.af-south-1.amazonaws.com/profile_images/77b2f3d8-41cc-48a3-bcb6-058b256da6d0.jpg"
+         alt="Naturaw logo">
+    </header>
+    <main>
+        <button id="downloadButton">Download App</button>
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const downloadButton = document.getElementById("downloadButton");
+            const apiUrl = "http://sanny-tech-env.eba-e5g3udca.af-south-1.elasticbeanstalk.com/sanny/download-apk"; // Replace with your actual API URL
+            
+            downloadButton.addEventListener("click", async () => {
+                try {
+                    const response = await fetch(apiUrl, {
+                        method: "GET",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                    });
+
+                    if (response.ok) {
+                        const blob = await response.blob();
+                        const url = window.URL.createObjectURL(blob);
+                        const link = document.createElement("a");
+                        link.href = url;
+                        link.setAttribute("download", "app.apk");
+                        document.body.appendChild(link);
+                        link.click();
+                        link.remove();
+                    } else {
+                        console.error("Error downloading APK.");
+                    }
+                } catch (error) {
+                    console.error("Error:", error);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+.parent {
+    
+}
+.top-bar {
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-content: centre;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #7F7F7F;
+    flex-direction: row;
+}
+.first-section{
+    display: flex;
+    flex-direction: row;
+    width: 384px;
+    justify-content: space-between;
+    align-content: centre;
+}
+.hamburger-icon-holder {
+    width: 24px;
+}
+.hamburger-icon{
+    height: 24px;
+    width: 24px;
+}
+.UFIND-logo-container{
+    flex: 1;
+    background-color: yellow;
+}
+.UFIND-logo {
+    display: flex;
+    width: 200px;
+    flex-direction: row;
+    background-color: #00C0FF;
+}
+.logo-text-holder {
+    background-color: #5F00FF;
+    flex: 1;
+}
+.logo-image-holder{
+    width: 80px;
+    
+}
+.logo-image{
+    height: 80px;
+    width: 80px;
+}
+.middle-section{
+    background-color: #FA00FF;
+    display: flex;
+}
+.last-section{
+    background-color: #00AFFF;
+     display: flex;
+}
